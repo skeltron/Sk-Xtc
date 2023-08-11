@@ -17,7 +17,7 @@ SK.Removextc = 3 -- Aantal xtc dat er verwijderd word voor 1 Xtc Zakje temaken
 SK.Pluktext = '~b~E ~s~• Xtc Oppakken' -- Text dat er staat om te plukken
 SK.Verwerktext = '~b~E ~s~• Xtc Verwerken' -- Text dat er staat om te verwerken
 
-SK.SpawnZones = {
+SK.Zones = {
 	Xtc = {coords = vector3(-1050.7428, -3507.2839, 14.1390)}, -- Coords van het Xtc plein
 	Verwerk = {coords = vector3(-1031.7694, -3453.9634, 13.9443)} -- Coords van het Xtc verwerken
 }

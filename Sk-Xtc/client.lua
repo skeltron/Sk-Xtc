@@ -8,7 +8,7 @@ Citizen.CreateThread(function()
         sheesh = true
 		local coords = GetEntityCoords(PlayerPedId())
 
-		if GetDistanceBetweenCoords(coords, SK.SpawnZones.Xtc.coords, true) < SK.Distancespawn then
+		if GetDistanceBetweenCoords(coords, SK.Zones.Xtc.coords, true) < SK.Distancespawn then
             sheesh = false
 			SpawnXtc()
 		end
@@ -48,9 +48,9 @@ Citizen.CreateThread(function()
         sheesh = true
         Citizen.Wait(6)
         local coords = GetEntityCoords(PlayerPedId())
-        if GetDistanceBetweenCoords(coords, SK.SpawnZones.Verwerk.coords, false) < 2.5 and not IsPedSittingInAnyVehicle(PlayerPedId()) then
+        if GetDistanceBetweenCoords(coords, SK.Zones.Verwerk.coords, false) < 2.5 and not IsPedSittingInAnyVehicle(PlayerPedId()) then
             sheesh = false
-            DrawScriptText(vector3(SK.SpawnZones.Verwerk.coords), SK.Verwerktext)
+            DrawScriptText(vector3(SK.Zones.Verwerk.coords), SK.Verwerktext)
             if IsControlJustReleased(0, 38) and not NuBezig then
                 ESX.TriggerServerCallback('Sk-Xtc:checkitem', function(aantal) 
                     if aantal >= SK.Removextc then
@@ -142,7 +142,7 @@ function ValidatespawnCoord(plantCoord)
 			end
 		end
 
-		if GetDistanceBetweenCoords(plantCoord, SK.SpawnZones.Xtc.coords, false) > 40 then
+		if GetDistanceBetweenCoords(plantCoord, SK.Zones.Xtc.coords, false) > 40 then
 			validate = false
 		end
 
@@ -166,8 +166,8 @@ function GeneratespawnCoords()
 		math.randomseed(GetGameTimer())
 		local modY = math.random(-90, 90)
 
-		spawnCoordX = SK.SpawnZones.Xtc.coords.x + modX
-		spawnCoordY = SK.SpawnZones.Xtc.coords.y + modY
+		spawnCoordX = SK.Zones.Xtc.coords.x + modX
+		spawnCoordY = SK.Zones.Xtc.coords.y + modY
 
 		local coordZ = GetCoordZ(spawnCoordX, spawnCoordY)
 		local coord = vector3(spawnCoordX, spawnCoordY, coordZ)
