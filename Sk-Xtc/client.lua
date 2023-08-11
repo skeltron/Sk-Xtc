@@ -29,7 +29,7 @@ Citizen.CreateThread(function()
             for i=1, #Xtc, 1 do
                 if GetDistanceBetweenCoords(coords, GetEntityCoords(Xtc[i]), false) < 1 then
                     sheesh = false
-                    DrawScriptText(GetEntityCoords(Xtc[i]) + vector3(0.0, 0.0, 0.75), '~b~E ~s~• Xtc oppakken')
+                    DrawScriptText(GetEntityCoords(Xtc[i]) + vector3(0.0, 0.0, 0.75), SK.Pluktext)
                     nearbyObject, nearbyID = Xtc[i], i
                     if IsControlJustReleased(0, 38) and not NuBezig then
                         NuBezig = true
