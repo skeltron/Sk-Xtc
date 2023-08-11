@@ -25,21 +25,19 @@ Citizen.CreateThread(function()
         Citizen.Wait(6)
         local coords = GetEntityCoords(PlayerPedId())
         local nearbyObject, nearbyID
-        if not IsPedSittingInAnyVehicle(PlayerPedId()) then
-            for i=1, #Xtc, 1 do
-                if GetDistanceBetweenCoords(coords, GetEntityCoords(Xtc[i]), false) < 1 then
-                    sheesh = false
-                    DrawScriptText(GetEntityCoords(Xtc[i]) + vector3(0.0, 0.0, 0.75), SK.Pluktext)
-                    nearbyObject, nearbyID = Xtc[i], i
-                    if IsControlJustReleased(0, 38) and not NuBezig then
-                        NuBezig = true
-                        Farmen(nearbyObject)
-                    end
+        for i=1, #Xtc, 1 do
+            if GetDistanceBetweenCoords(coords, GetEntityCoords(Xtc[i]), false) < 1 and not IsPedSittingInAnyVehicle(PlayerPedId()) then
+                sheesh = false
+                DrawScriptText(GetEntityCoords(Xtc[i]) + vector3(0.0, 0.0, 0.75), SK.Pluktext)
+                nearbyObject, nearbyID = Xtc[i], i
+                if IsControlJustReleased(0, 38) and not NuBezig then
+                    NuBezig = true
+                    Farmen(nearbyObject)
                 end
             end
-            if sheesh then
-                Wait(500)
-            end
+        end
+        if sheesh then
+            Wait(500)
         end
     end
 end)
@@ -50,24 +48,22 @@ Citizen.CreateThread(function()
         sheesh = true
         Citizen.Wait(6)
         local coords = GetEntityCoords(PlayerPedId())
-        if not IsPedSittingInAnyVehicle(PlayerPedId()) then
-            if GetDistanceBetweenCoords(coords, SK.SpawnZones.Verwerk.coords, false) < 2.5 then
-                sheesh = false
-                DrawScriptText(vector3(SK.SpawnZones.Verwerk.coords), SK.Verwerktext)
-                if IsControlJustReleased(0, 38) and not NuBezig then
-                    ESX.TriggerServerCallback('Sk-Xtc:checkitem', function(aantal) 
-                        if aantal >= SK.Removextc then
-                            NuBezig = true
-                            Verwerken()
-                        else
-                            exports['mythic_notify']:DoHudText('error', 'Je hebt te weinig xtc opzak')
-                        end
-                    end)
-                end
+        if GetDistanceBetweenCoords(coords, SK.SpawnZones.Verwerk.coords, false) < 2.5 and not IsPedSittingInAnyVehicle(PlayerPedId()) then
+            sheesh = false
+            DrawScriptText(vector3(SK.SpawnZones.Verwerk.coords), SK.Verwerktext)
+            if IsControlJustReleased(0, 38) and not NuBezig then
+                ESX.TriggerServerCallback('Sk-Xtc:checkitem', function(aantal) 
+                    if aantal >= SK.Removextc then
+                        NuBezig = true
+                        Verwerken()
+                    else
+                        exports['mythic_notify']:DoHudText('error', 'Je hebt te weinig xtc opzak')
+                    end
+                end)
             end
-            if sheesh then
-                Wait(500)
-            end
+        end
+        if sheesh then
+            Wait(500)
         end
     end
 end)
