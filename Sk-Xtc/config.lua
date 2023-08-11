@@ -9,8 +9,14 @@ SK.Distancespawn = 30 -- Hoever je in de buurt moet zijn totdat er xtc props wor
 SK.Item = 'xtc' --Item dat je krijgt als je plukt
 SK.Itemcount = math.random(1, 3) -- Hoeveelheid je ontvangt is random tussen de 3 a 5
 
-SK.Pluktext = '~b~E ~s~• Xtc oppakken' -- Text dat er staat om te plukken
+SK.Verwerkitem = 'xtc_verpak' -- Item dat je krijgt na het verwerken
+SK.Verwerkcount = 1 -- Hoeveel je krijgt na 1 keer verwerken
+SK.Removextc = 3 -- Aantal xtc dat er verwijderd word voor 1 Xtc Zakje temaken
+
+SK.Pluktext = '~b~E ~s~• Xtc Oppakken' -- Text dat er staat om te plukken
+SK.Verwerktext = '~b~E ~s~• Xtc Verwerken' -- Text dat er staat om te verwerken
 
 SK.SpawnZones = {
 	Xtc = {coords = vector3(-1050.7428, -3507.2839, 14.1390)}, -- Coords van het Xtc plein
+	Verwerk = {coords = vector3(-1031.7694, -3453.9634, 13.9443)} -- Coords van het Xtc verwerken
 }

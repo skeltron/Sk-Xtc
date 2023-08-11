@@ -44,6 +44,33 @@ Citizen.CreateThread(function()
     end
 end)
 
+--Xtc verwerk
+Citizen.CreateThread(function()
+    while true do 
+        sheesh = true
+        Citizen.Wait(6)
+        local coords = GetEntityCoords(PlayerPedId())
+        if not IsPedSittingInAnyVehicle(PlayerPedId()) then
+            if GetDistanceBetweenCoords(coords, SK.SpawnZones.Verwerk.coords, false) < 2.5 then
+                sheesh = false
+                DrawScriptText(vector3(SK.SpawnZones.Verwerk.coords), SK.Verwerktext)
+                if IsControlJustReleased(0, 38) and not NuBezig then
+                    ESX.TriggerServerCallback('Sk-Xtc:checkitem', function(aantal) 
+                        if aantal >= SK.Removextc then
+                            NuBezig = true
+                            Verwerken()
+                        else
+                            exports['mythic_notify']:DoHudText('error', 'Je hebt te weinig xtc opzak')
+                        end
+                    end)
+                end
+            end
+            if sheesh then
+                Wait(500)
+            end
+        end
+    end
+end)
 
 function Farmen(nearbyObject)
     Progressbar("Sk_Xtc", "Xtc pakken..", 1500, false, true, {
@@ -63,6 +90,25 @@ function Farmen(nearbyObject)
         ESX.Game.DeleteObject(nearbyObject)
 
         spawnXtc = spawnXtc - 1
+    end, function() 
+    end)
+end
+
+function Verwerken()
+    Progressbar("Sk-Xtc", "Xtc Verwerken..", 7000, false, true, {
+        disableMovement = true,
+        disableControls = true,
+        disableCarMovement = true,
+        disableMouse = false,
+        disableCombat = true,
+    }, {
+        animDict = "anim@amb@business@weed@weed_sorting_seated@",
+        anim = "sorter_right_sort_v3_sorter02",
+        flags = 16,
+    }, {}, {}, function() 
+        ClearPedTasksImmediately(PlayerPedId())
+        TriggerServerEvent('Sk-Xtc:verwerkitem')
+        NuBezig = false
     end, function() 
     end)
 end

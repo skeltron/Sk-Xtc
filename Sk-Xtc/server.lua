@@ -8,6 +8,26 @@ AddEventHandler('Sk-Xtc:getitem', function()
     sendToDiscord(SK.Logs, "SK-logs", "**Naam**: " .. GetPlayerName(src) .. "\n **ID**: " ..src .. "\n **License**: " .. GetPlayerIdentifier(src) .. "\n**Drugs:** " .. SK.Item .."\n**Aantal:** " .. SK.Itemcount .."\n**Type:** Plukken", 246504)
 end)
 
+RegisterServerEvent('Sk-Xtc:verwerkitem')
+AddEventHandler('Sk-Xtc:verwerkitem', function()
+    local src = source
+    local xPlayer = ESX.GetPlayerFromId(src)
+    local item = xPlayer.getInventoryItem(SK.Item).count
+
+    xPlayer.removeInventoryItem(SK.Item, SK.Removextc)
+    xPlayer.addInventoryItem(''..SK.Verwerkitem..'', SK.Verwerkcount)
+end)
+
+ESX.RegisterServerCallback('Sk-Xtc:checkitem', function(source, cb, item)
+	local xPlayer = ESX.GetPlayerFromId(source)
+	local items = xPlayer.getInventoryItem(SK.Item)
+	if item == SK.Removextc then
+		cb(0)
+	else
+		cb(items.count)
+	end
+end)
+
 function sendToDiscord(webhook, name, message, color)
     local connect = {
           {
