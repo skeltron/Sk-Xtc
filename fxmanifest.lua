@@ -8,11 +8,11 @@ description 'Sk-Xtc made by skeltron#0001'
 shared_script '@es_extended/imports.lua'
 
 client_scripts {
-    "config.lua",
-    "client.lua"
+    "client/*",
+	"config.lua"
 }
 
 server_scripts {
-    "config.lua",
-    "server.lua"
+	"server/*",
+	"config.lua"
 }
