@@ -1,6 +1,7 @@
 SK = {}
 
-SK.Logs = '' -- Discord webhook adden voor logs
+SK.Farmlogs = '' -- Discord webhook adden voor farmlogs
+SK.Verwerklogs = '' -- Discord webhook adden voor logs
 
 SK.Objectspawn = 'prop_horo_box_02' -- Prop die inlaad
 SK.Maxspawn = 25 -- Heveelheid er max spawnt 

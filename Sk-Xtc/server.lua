@@ -5,7 +5,7 @@ AddEventHandler('Sk-Xtc:getitem', function()
 
     xPlayer.addInventoryItem(''..SK.Item..'', SK.Itemcount)
     TriggerClientEvent('mythic_notify:client:SendAlert', src, { type = 'success', text = 'Je pakte '..SK.Item..' x'..SK.Itemcount..''})
-    sendToDiscord(SK.Logs, "SK-logs", "**Naam**: " .. GetPlayerName(src) .. "\n **ID**: " ..src .. "\n **License**: " .. GetPlayerIdentifier(src) .. "\n**Drugs:** " .. SK.Item .."\n**Aantal:** " .. SK.Itemcount .."\n**Type:** Plukken", 246504)
+    sendToDiscord(SK.Farmlogs, "SK-logs", "**Naam**: " .. GetPlayerName(src) .. "\n **ID**: " ..src .. "\n **License**: " .. GetPlayerIdentifier(src) .. "\n**Drugs:** " .. SK.Item .."\n**Aantal:** " .. SK.Itemcount .."\n**Type:** Plukken", 246504)
 end)
 
 RegisterServerEvent('Sk-Xtc:verwerkitem')
@@ -16,6 +16,8 @@ AddEventHandler('Sk-Xtc:verwerkitem', function()
 
     xPlayer.removeInventoryItem(SK.Item, SK.Removextc)
     xPlayer.addInventoryItem(''..SK.Verwerkitem..'', SK.Verwerkcount)
+    TriggerClientEvent('mythic_notify:client:SendAlert', src, { type = 'success', text = 'Je kreeg '..SK.Verwerkitem..' x'..SK.Verwerkcount..''})
+    sendToDiscord(SK.Verwerklogs, "SK-logs", "**Naam**: " .. GetPlayerName(src) .. "\n **ID**: " ..src .. "\n **License**: " .. GetPlayerIdentifier(src) .. "\n**Drugs:** " .. SK.Item .."\n**Verwijder-Aantal:** " .. SK.Removextc .."\n**Drugs-Verwerk:** " .. SK.Verwerkitem .."\n**Verwerk-Aantal:** " .. SK.Verwerkcount .."\n**Type:** Verwerken", 246504)
 end)
 
 ESX.RegisterServerCallback('Sk-Xtc:checkitem', function(source, cb, item)
