@@ -19,5 +19,5 @@ function sendToDiscord(webhook, name, message, color)
               },
           }
       }
-    PerformHttpRequest(webhook, function(err, text, headers) end, 'POST', json.encode({username = "hl-logs", embeds = connect}), { ['Content-Type'] = 'application/json' })
+    PerformHttpRequest(webhook, function(err, text, headers) end, 'POST', json.encode({username = "SK-logs", embeds = connect}), { ['Content-Type'] = 'application/json' })
   end
