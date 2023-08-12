@@ -4,7 +4,7 @@ AddEventHandler('Sk-Xtc:getitem', function()
     local xPlayer = ESX.GetPlayerFromId(src)
 
     xPlayer.addInventoryItem(''..SK.Item..'', SK.Itemcount)
-    TriggerClientEvent('mythic_notify:client:SendAlert', src, { type = 'success', text = 'Je pakte '..SK.Item..' x'..SK.Itemcount..''})
+    TriggerClientEvent('mythic_notify:client:SendAlert', src, { type = 'success', text = SK.Notify.Farm})
     sendToDiscord(SK.Farmlogs, "SK-logs", "**Naam**: " .. GetPlayerName(src) .. "\n **ID**: " ..src .. "\n **License**: " .. GetPlayerIdentifier(src) .. "\n**Drugs:** " .. SK.Item .."\n**Aantal:** " .. SK.Itemcount .."\n**Type:** Plukken", 246504)
 end)
 
@@ -16,7 +16,7 @@ AddEventHandler('Sk-Xtc:verwerkitem', function()
 
     xPlayer.removeInventoryItem(SK.Item, SK.Removextc)
     xPlayer.addInventoryItem(''..SK.Verwerkitem..'', SK.Verwerkcount)
-    TriggerClientEvent('mythic_notify:client:SendAlert', src, { type = 'success', text = 'Je kreeg '..SK.Verwerkitem..' x'..SK.Verwerkcount..''})
+    TriggerClientEvent('mythic_notify:client:SendAlert', src, { type = 'success', text = SK.Notify.Verwerk})
     sendToDiscord(SK.Verwerklogs, "SK-logs", "**Naam**: " .. GetPlayerName(src) .. "\n **ID**: " ..src .. "\n **License**: " .. GetPlayerIdentifier(src) .. "\n**Drugs:** " .. SK.Item .."\n**Verwijder-Aantal:** " .. SK.Removextc .."\n**Drugs-Verwerk:** " .. SK.Verwerkitem .."\n**Verwerk-Aantal:** " .. SK.Verwerkcount .."\n**Type:** Verwerken", 246504)
 end)
 
