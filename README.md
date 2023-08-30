@@ -6,3 +6,5 @@ Neem dan contact op discord: skeltron.
 
 Drugs script meeste aanpasbaar in de config.
 0.00 mss idle.
+
+[SOON UPDATES]
