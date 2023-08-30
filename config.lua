@@ -24,6 +24,5 @@ SK.Zones = {
 
 SK.Notify = {
 	Itemcheck = 'Je hebt te weinig xtc opzak',
-	Farm = 'Je pakte x'..SK.Itemcount..' '..SK.Item..'',
 	Verwerk = 'Je kreeg x'..SK.Verwerkcount..' '..SK.Verwerkitem..''
 }

@@ -16,11 +16,12 @@ RegisterServerEvent('Sk-Xtc:getitem')
 AddEventHandler('Sk-Xtc:getitem', function()
     local src = source
     local xPlayer = ESX.GetPlayerFromId(src)
+    local count = math.random(SK.Itemcount)
 
     if distancecheckfarm(src) then
 
-        xPlayer.addInventoryItem(''..SK.Item..'', SK.Itemcount)
-        TriggerClientEvent('mythic_notify:client:SendAlert', src, { type = 'success', text = SK.Notify.Farm})
+        xPlayer.addInventoryItem(''..SK.Item..'', count)
+        TriggerClientEvent('mythic_notify:client:SendAlert', src, { type = 'success', text = 'Je pakte x'..count..' '..SK.Item..''})
         sendToDiscord(SK.Farmlogs, "SK-logs", "**Naam**: " .. GetPlayerName(src) .. "\n **ID**: " ..src .. "\n **License**: " .. GetPlayerIdentifier(src) .. "\n**Drugs:** " .. SK.Item .."\n**Aantal:** " .. SK.Itemcount .."\n**Type:** Plukken", 246504)
     else
         DropPlayer(src,"Event triggeren")
