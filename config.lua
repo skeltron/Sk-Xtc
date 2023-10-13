@@ -2,6 +2,8 @@ SK = {
 	Farmlogs = '', -- Discord webhook adden voor farmlogs
 	Verwerklogs = '', -- Discord webhook adden voor verwerklogs
 
+	Notify = 'mythic', -- mythic of esx of okok
+
 	Objectspawn = 'prop_horo_box_02', -- Prop die inlaad
 	Maxspawn = 20, -- Heveelheid er max spawnt 
 	Distancespawn = 30, -- Hoever je in de buurt moet zijn totdat er xtc props worden ingeladen
