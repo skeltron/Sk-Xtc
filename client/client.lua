@@ -57,7 +57,7 @@ Citizen.CreateThread(function()
                         NuBezig = true
                         Verwerken()
                     else
-                        exports['mythic_notify']:DoHudText('error', SK.Notify.Itemcheck)
+                        Notify("error", "Je hebt te weinig xtc opzak")
                     end
                 end)
             end
