@@ -4,7 +4,7 @@ SK = {
 
 	Notify = 'mythic', -- mythic of esx of okok
 
-	Objectspawn = 'prop_horo_box_02', -- Prop die inlaad
+	Objectname = 'prop_horo_box_02', -- Prop die inlaad
 	Maxspawn = 20, -- Heveelheid er max spawnt 
 	Distancespawn = 30, -- Hoever je in de buurt moet zijn totdat er xtc props worden ingeladen
 

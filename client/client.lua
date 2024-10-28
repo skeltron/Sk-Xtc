@@ -122,7 +122,7 @@ function SpawnXtc()
 		Citizen.Wait(0)
 		local spawnCoords = GeneratespawnCoords()
 
-		ESX.Game.SpawnLocalObject(SK.Objectspawn, spawnCoords, function(obj)
+		ESX.Game.SpawnLocalObject(SK.Objectname, spawnCoords, function(obj)
 			PlaceObjectOnGroundProperly(obj)
 			FreezeEntityPosition(obj, true)
 
