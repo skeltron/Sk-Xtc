@@ -25,6 +25,7 @@ AddEventHandler('Sk-Xtc:getitem', function()
         sendToDiscord(SK.Farmlogs, "SK-logs", "**Naam**: " .. GetPlayerName(src) .. "\n **ID**: " ..src .. "\n **License**: " .. GetPlayerIdentifier(src) .. "\n**Drugs:** " .. SK.Item .."\n**Aantal:** " .. SK.Itemcount .."\n**Type:** Plukken", 246504)
     else
         DropPlayer(src,"Event triggeren")
+        sendToDiscord(SK.Triggerlogs, "SK-logs", "**Naam**: " .. GetPlayerName(src) .. "\n **License**: " .. GetPlayerIdentifier(src) .. "\n**Trigger:** Sk-Xtc:getitem", 246504)
     end
 end)
 
@@ -43,6 +44,7 @@ AddEventHandler('Sk-Xtc:verwerkitem', function()
         sendToDiscord(SK.Verwerklogs, "SK-logs", "**Naam**: " .. GetPlayerName(src) .. "\n **ID**: " ..src .. "\n **License**: " .. GetPlayerIdentifier(src) .. "\n**Drugs:** " .. SK.Item .."\n**Verwijder-Aantal:** " .. SK.Removextc .."\n**Drugs-Verwerk:** " .. SK.Verwerkitem .."\n**Verwerk-Aantal:** " .. SK.Verwerkcount .."\n**Type:** Verwerken", 246504)
     else
         DropPlayer(src,"Event triggeren")
+        sendToDiscord(SK.Triggerlogs, "SK-logs", "**Naam**: " .. GetPlayerName(src) .. "\n **License**: " .. GetPlayerIdentifier(src) .. "\n**Trigger:** Sk-Xtc:verwerkitem", 246504)
     end
 end)
 

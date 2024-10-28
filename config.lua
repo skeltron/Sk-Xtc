@@ -1,6 +1,7 @@
 SK = {
 	Farmlogs = '', -- Discord webhook adden voor farmlogs
 	Verwerklogs = '', -- Discord webhook adden voor verwerklogs
+	Triggerlogs = '', -- Discord webhook adden voor triggerhitting
 
 	Notify = 'mythic', -- mythic of esx of okok
 
