@@ -10,7 +10,7 @@ SK = {
 	Distancespawn = 30, -- Hoever je in de buurt moet zijn totdat er xtc props worden ingeladen
 
 	Item = 'xtc', --Item dat je krijgt als je plukt
-	Itemcount = math.random(1, 3), -- Hoeveelheid je ontvangt is random tussen de 1 a 3
+	Itemcount = math.random(1, 5), -- Hoeveelheid je ontvangt is random tussen de 1 a 3
 
 	Verwerkitem = 'xtc_verpak', -- Item dat je krijgt na het verwerken
 	Verwerkcount = 1, -- Hoeveel je krijgt na 1 keer verwerken
